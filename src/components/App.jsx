@@ -9,17 +9,22 @@ function App() {
     const { value, name } = event.target;
 
     setFullName((prevValue) => {
-      if (name === "fName") {
-        return {
-          fName: value,
-          lName: prevValue.lName
-        };
-      } else if (name === "lName") {
-        return {
-          fName: prevValue.fName,
-          lName: value
-        };
-      }
+      return {
+        ...prevValue,
+        [name]: value
+      };
+
+      // if (name === "fName") {
+      //   return {
+      //     fName: value,
+      //     lName: prevValue.lName
+      //   };
+      // } else if (name === "lName") {
+      //   return {
+      //     fName: prevValue.fName,
+      //     lName: value
+      //   };
+      // }
     });
   }
 
